@@ -546,6 +546,88 @@
   color:#ffd98a;
   text-shadow:0 8px 24px rgba(0,0,0,0.52);
 }
+<<<<<<< codex/refine-slide-13-for-better-readability-9epb1x
+
+#slide12 h1{
+  font-size:clamp(46px,6.4vw,96px);
+}
+
+#slide12 ul{
+  gap:clamp(18px,2.2vw,32px);
+  margin-top:var(--space-2);
+}
+
+#slide12 li{
+  display:flex;
+  align-items:flex-start;
+}
+
+#slide12 li::before{
+  margin-right:0;
+  width:1.15em;
+  flex:0 0 1.15em;
+  text-align:center;
+  line-height:1.35;
+}
+
+#slide12 li:nth-child(-n+3){
+  font-weight:780;
+  color:var(--white);
+}
+
+#slide12 li:nth-child(n+4){
+  color:var(--muted);
+  font-size:clamp(20px,2vw,30px);
+}
+
+#slide14{
+  align-items:center;
+}
+
+#slide14 .quiz{
+  width:min(920px,100%);
+  margin-top:var(--space-3);
+  align-items:stretch;
+}
+
+#slide14 .question{
+  font-size:clamp(26px,2.9vw,40px);
+  max-width:24ch;
+  margin:0 auto;
+  color:var(--white);
+}
+
+#slide14 .options{
+  margin-top:4px;
+  gap:clamp(16px,1.8vw,22px);
+}
+
+#slide14 .option{
+  background:rgba(5, 13, 34, 0.62);
+  border-color:rgba(255,255,255,0.11);
+  min-height:86px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+#slide14 .option .label{
+  margin-bottom:0;
+  color:#e7f0ff;
+}
+
+#slide14 .controls-row{
+  justify-content:center;
+  margin-top:2px;
+}
+
+#slide14 .insight{
+  width:min(920px,100%);
+  margin:0 auto;
+}
+=======
+>>>>>>> main
 
 #slide12 h1{
   font-size:clamp(46px,6.4vw,96px);
@@ -824,6 +906,17 @@
           <div class="label">Sinal fraco de risco</div>
         </div>
       </div>
+<<<<<<< codex/refine-slide-13-for-better-readability-9epb1x
+      <div class="controls-row">
+        <button id="revealBtn2" class="btn small" aria-controls="insight2" aria-expanded="false" title="Revelar insight do Quiz 2">Revelar insight</button>
+      </div>
+      <div id="insight2" class="insight" role="region" aria-live="polite">
+        <strong>Sugestão de reflexão:</strong>
+        <p>O maior risco não está no sistema.</p>
+        <p>Está na forma como a decisão é interpretada no uso.</p>
+      </div>
+=======
+>>>>>>> main
     </div>
   </section>
 
@@ -968,8 +1061,10 @@
   const optionsContainer = document.getElementById('options');
   const optionElements = optionsContainer ? Array.from(optionsContainer.querySelectorAll('.option')) : [];
   const revealBtn = document.getElementById('revealBtn');
+  const revealBtn2 = document.getElementById('revealBtn2');
   const resetBtn = document.getElementById('resetBtn');
   const insight = document.getElementById('insight');
+  const insight2 = document.getElementById('insight2');
 
   if(optionElements.length){
     function updateAriaActive(idx){
@@ -1023,19 +1118,23 @@
     });
   }
 
-  if(revealBtn){
-    revealBtn.addEventListener('click', () => {
-      if(insight.classList.contains('visible')){
-        insight.classList.remove('visible');
-        revealBtn.setAttribute('aria-expanded','false');
-        revealBtn.textContent = 'Revelar insight';
+  function bindReveal(button, panel){
+    if(!button || !panel) return;
+    button.addEventListener('click', () => {
+      if(panel.classList.contains('visible')){
+        panel.classList.remove('visible');
+        button.setAttribute('aria-expanded','false');
+        button.textContent = 'Revelar insight';
       } else {
-        insight.classList.add('visible');
-        revealBtn.setAttribute('aria-expanded','true');
-        revealBtn.textContent = 'Ocultar insight';
+        panel.classList.add('visible');
+        button.setAttribute('aria-expanded','true');
+        button.textContent = 'Ocultar insight';
       }
     });
   }
+
+  bindReveal(revealBtn, insight);
+  bindReveal(revealBtn2, insight2);
 
   if(resetBtn){
     resetBtn.addEventListener('click', () => {
