@@ -546,6 +546,69 @@
   color:#ffd98a;
   text-shadow:0 8px 24px rgba(0,0,0,0.52);
 }
+
+#slide12 h1{
+  font-size:clamp(46px,6.4vw,96px);
+}
+
+#slide12 ul{
+  gap:clamp(18px,2.2vw,32px);
+  margin-top:var(--space-2);
+}
+
+#slide12 li{
+  display:flex;
+  align-items:flex-start;
+}
+
+#slide12 li::before{
+  margin-right:0;
+  width:1.15em;
+  flex:0 0 1.15em;
+  text-align:center;
+  line-height:1.35;
+}
+
+#slide12 li:nth-child(-n+3){
+  font-weight:780;
+  color:var(--white);
+}
+
+#slide12 li:nth-child(n+4){
+  color:var(--muted);
+  font-size:clamp(20px,2vw,30px);
+}
+
+#slide14{
+  align-items:center;
+}
+
+#slide14 .quiz{
+  width:min(920px,100%);
+  margin-top:var(--space-3);
+  align-items:stretch;
+}
+
+#slide14 .question{
+  font-size:clamp(26px,2.9vw,40px);
+  max-width:24ch;
+  margin:0 auto;
+  color:var(--white);
+}
+
+#slide14 .options{
+  margin-top:4px;
+}
+
+#slide14 .option{
+  background:rgba(5, 13, 34, 0.62);
+  border-color:rgba(255,255,255,0.11);
+}
+
+#slide14 .option .label{
+  margin-bottom:0;
+  color:#e7f0ff;
+}
   }
 
   @media (max-width:900px){
@@ -748,7 +811,23 @@
 
   <section class="slide card center" id="slide14" role="group" aria-roledescription="slide" aria-label="Slide 15 de 18" tabindex="0" aria-hidden="true">
     <h1>QUIZ 2</h1>
-    <p>No seu contexto hoje,<br>onde está o maior risco?</p>
+    <div class="quiz" role="group" aria-label="Quiz 2">
+      <div class="question">No seu contexto hoje, onde está o maior risco?</div>
+      <div class="options" role="list" aria-label="Opções de resposta do Quiz 2">
+        <div class="option" role="listitem" tabindex="0">
+          <div class="label">Decisão ambígua</div>
+        </div>
+        <div class="option" role="listitem" tabindex="0">
+          <div class="label">Fluxo sem recuperação</div>
+        </div>
+        <div class="option" role="listitem" tabindex="0">
+          <div class="label">Pressa operacional</div>
+        </div>
+        <div class="option" role="listitem" tabindex="0">
+          <div class="label">Sinal fraco de risco</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="slide card" id="slide15" role="group" aria-roledescription="slide" aria-label="Slide 16 de 18" tabindex="0" aria-hidden="true">
