@@ -546,6 +546,38 @@
   color:#ffd98a;
   text-shadow:0 8px 24px rgba(0,0,0,0.52);
 }
+
+#slide12 h1{
+  font-size:clamp(46px,6.4vw,96px);
+}
+
+#slide12 ul{
+  gap:clamp(18px,2.2vw,32px);
+  margin-top:var(--space-2);
+}
+
+#slide12 li{
+  display:flex;
+  align-items:flex-start;
+}
+
+#slide12 li::before{
+  margin-right:0;
+  width:1.15em;
+  flex:0 0 1.15em;
+  text-align:center;
+  line-height:1.35;
+}
+
+#slide12 li:nth-child(-n+3){
+  font-weight:780;
+  color:var(--white);
+}
+
+#slide12 li:nth-child(n+4){
+  color:var(--muted);
+  font-size:clamp(20px,2vw,30px);
+}
   }
 
   @media (max-width:900px){
